@@ -1,0 +1,19 @@
+apiVersion: vi
+kind: ReplicationController
+metadata:
+ name: trainschedule
+spec:
+ replicas: 3
+ selector:
+  app: trainschedule
+ template:
+  metadata:
+   name: trainschedule
+   labels:
+    app: trainschedule
+  spec:
+   containers:
+   - name: trainschedule
+     image: devopsnewjob/trainschedule:v1
+     ports:
+     - containerPort:8090
